@@ -5,7 +5,7 @@ module Pygmy
     extend Pygmy::DockerService
 
     def self.image_name
-      'amazeeio/haproxy'
+      'oceanic/amazeeio-haproxy'
     end
 
     def self.container_name
