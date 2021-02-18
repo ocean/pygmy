@@ -15,7 +15,7 @@ The Docker based Drupal Development environment consists of two parts:
 
 ### Part I: Shared Docker Containers
 
-The shared docker containers for HAProxy and the SSH Agent, these are used by all other containers in order to properly work. They are started with `pygmy` for Linux & OS X.
+The shared docker containers for HAProxy and the SSH Agent, these are used by all other containers in order to properly work. They are started with `pygmy-apple` for macOS.
 
 ### [Part II: Drupal Docker Containers](./drupal_site_containers.md)
 
@@ -96,7 +96,7 @@ The environment starts 3 containers:
                                             |                                                               |    |
 +--------------------+                      |     +------------------+                                      |    |
 |                    |                      |     |                  |                                      |    |
-| pygmy              +---------------------------->    ssh agent     +--------------------------------------+    |
+| pygmy-apple        +---------------------------->    ssh agent     +--------------------------------------+    |
 |                    |                      |     |                  |                                           |
 +--------------------+  injects ssh-key     |     +------------------+  Exposes ssh-agent via                    |
                         into agent          |                           /tmp/amazeeio_ssh-agent/socket           |

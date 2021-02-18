@@ -1,4 +1,4 @@
-#Installation of Pygmy
+# Installation of Pygmy-apple
 
 ## Prerequisites
 Make sure you have the following dependencies installed:
@@ -7,6 +7,6 @@ Make sure you have the following dependencies installed:
 * Ruby, see [the official guides ](https://www.ruby-lang.org/en/documentation/installation/)
 
 ## Installation
-The installation of `pygmy` is fairly simple and can be accomplished via the ruby gem package manager
+The installation of `pygmy-apple` is fairly simple and can be accomplished via the ruby gem package manager
 
-    gem install pygmy
+    gem install pygmy-apple

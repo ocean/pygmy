@@ -8,9 +8,9 @@ require 'pygmy'
 class PygmyBin < Thor
   class_option :verbose, type: :boolean, aliases: '-v', default: false
 
-  desc 'up', 'Bring up pygmy services (dnsmasq, haproxy, mailhog, resolv, ssh-agent)'
+  desc 'up', 'Bring uppygmy-apple services (dnsmasq, haproxy, mailhog, resolv, ssh-agent)'
   long_desc <<-LONGDESC
-    Bring up pygmy services (dnsmasq, haproxy, resolv, ssh-agent)
+    Bring uppygmy-apple services (dnsmasq, haproxy, resolv, ssh-agent)
 
     When run, there will be two docker containers started:
 
@@ -27,7 +27,7 @@ class PygmyBin < Thor
     On Mac: A resolver file (/etc/resolver/docker.amazee.io) will be created to use the dnsmasq
     instance as a nameserver for all *.docker.amazee.io domains. (unless you add --no-resolver)
 
-    > $ pygmy up
+    > $pygmy-apple up
   LONGDESC
   option :addkey, type: :boolean, default:true
   option :resolver, type: :boolean, default: true
@@ -44,23 +44,23 @@ class PygmyBin < Thor
     exec_update
   end
 
-  desc 'stop', 'Stop all pygmy services'
+  desc 'stop', 'Stop allpygmy-apple services'
   long_desc <<-LONGDESC
-    Stops all pygmy services.  Can optionally pass [-d|--destroy]
+    Stops allpygmy-apple services.  Can optionally pass [-d|--destroy]
     to destroy the containers when they stop.
 
-    > $ pygmy stop [-d|--destroy]
+    > $pygmy-apple stop [-d|--destroy]
   LONGDESC
   option :destroy, type: :boolean, aliases: '-d', default: false
   def stop
     exec_stop(options)
   end
 
-  desc 'down', 'Stop and destroy all pygmy services'
+  desc 'down', 'Stop and destroy allpygmy-apple services'
   long_desc <<-LONGDESC
-    Stops all pygmy services and destroy the containers when they stop.
+    Stops allpygmy-apple services and destroy the containers when they stop.
 
-    > $ pygmy down
+    > $pygmy-apple down
   LONGDESC
   def down
     exec_stop({:destroy => true})
@@ -72,22 +72,22 @@ class PygmyBin < Thor
     Needs the absolute path to key as an argument
     or uses ~/.ssh/id_rsa if none provided
 
-    > $ pygmy addkey [~/.ssh/other_key]
+    > $pygmy-apple addkey [~/.ssh/other_key]
   LONGDESC
   def addkey(key = "#{Dir.home}/.ssh/id_rsa")
     add_ssh_key(key)
   end
 
-  desc 'version', 'Check current installed version of pygmy'
+  desc 'version', 'Check current installed version ofpygmy-apple'
   def version
     puts "Pygmy - Version: #{Pygmy::VERSION}"
   end
 
-  desc 'restart', 'Stop and restart all pygmy services'
+  desc 'restart', 'Stop and restart allpygmy-apple services'
   long_desc <<-LONGDESC
-    Stop and restart pygmy services (dnsmasq, resolv, haproxy, mailhog, ssh-agent)
+    Stop and restartpygmy-apple services (dnsmasq, resolv, haproxy, mailhog, ssh-agent)
 
-    > $ pygmy restart [-d|--destroy]
+    > $pygmy-apple restart [-d|--destroy]
   LONGDESC
   option :destroy, type: :boolean, aliases: '-d', default: false
   def restart
@@ -95,12 +95,12 @@ class PygmyBin < Thor
     exec_up(options)
   end
 
-  desc 'status', 'Report status of the pygmy services'
+  desc 'status', 'Report status of thepygmy-apple services'
   long_desc <<-LONGDESC
-    Checks the current status of the services managed by pygmy.
+    Checks the current status of the services managed bypygmy-apple.
     This includes dnsmasq, mailhog, and resolv
 
-    > $ pygmy status
+    > $pygmy-apple status
   LONGDESC
   def status
     exec_status(options)

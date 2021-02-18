@@ -15,7 +15,7 @@ module Pygmy
     end
 
     def self.file_comment
-      '# added by amazee.io pygmy'
+      '# added by amazee.io pygmy-apple'
     end
 
     def self.nameserver

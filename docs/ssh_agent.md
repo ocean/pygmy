@@ -1,12 +1,12 @@
 # SSH Agent
 
-Per default your SSH Key at `~/.ssh/id_rsa` is added to the Docker containers from `pygmy`
+Per default your SSH Key at `~/.ssh/id_rsa` is added to the Docker containers from `pygmy-apple`
 
-If you need another key, read the documentation of [`pygmy`](linux_pygmy.md) about this.
+If you need another key, read the documentation of [`pygmy-apple`](linux_pygmy.md) about this.
 
 ## How it works
-1. `pygmy` starts `amazeeio/ssh-agent` container with a volume `/tmp/amazeeio_ssh-agent`
-2. `pygmy` adds a default SSH key from the host into this volume
+1. `pygmy-apple` starts `amazeeio/ssh-agent` container with a volume `/tmp/amazeeio_ssh-agent`
+2. `pygmy-apple` adds a default SSH key from the host into this volume
 3. `docker-compose.yml` should have volume inclusion specified for CLI container:
   ```
   volumes_from:
@@ -31,8 +31,8 @@ Or for legacy systems:
 
 1. Check if you see the SSH Key inside your container with `ssh-add -L` <br>
    If you get `Could not open a connection to your authentication agent.` or `The agent has no identities.` head straight to **step 3.**
-2. Check if you see your SSH Key in `pygmy status`
-3. If you don't see the key in `pymgy status` run `pygmy addkey`. You should see `Successfully added ssh key` if the key addition was successful.
+2. Check if you see your SSH Key in `pygmy-apple status`
+3. If you don't see the key in `pymgy status` run `pygmy-apple addkey`. You should see `Successfully added ssh key` if the key addition was successful.
 4. After that you need to recreate the containers `docker-compose up -d --force`
 5. When the containers are recreated you should be able to see your ssh key with `ssh-add -L`
 6. If you still get the `Permission denied (publickey)` error get in touch with our engineers to check if the key is configured correctly on the hosting side.
