@@ -1,4 +1,4 @@
 module Pygmy
-  VERSION = '0.9.12-rc4'
-  DATE    = '2021-02-17'
+  VERSION = '0.9.13'
+  DATE    = '2021-04-27'
 end
